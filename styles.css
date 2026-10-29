@@ -1,0 +1,147 @@
+* {
+	box-sizing: border-box;
+}
+
+body{
+  padding: 25px;
+  background-color: #000000;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+	color: #e0d6eb;
+	text-align: center;
+	font-size:34px;
+	font-family:  "URW Gothic L", sans-serif;
+}
+
+.down{
+  color: #f0faff;
+	text-align: center;
+	font-size:25px;
+	font-family:  "URW Gothic L", sans-serif
+}
+/* aquela classe pra deixa aquele botão bonito que leva ao github*/
+.buttonlink
+{
+ background: #ffffff;
+ color:#000000 ;
+ font-family: "URW Gothic L", Sans-Serif;
+ font-weight: 600;
+ font-size: 27px;
+ letter-spacing: 2px;
+ text-decoration: none;
+ text-transform: uppercase;
+ padding: 20px 35px;
+ text-align: center;
+ transition: .4s;
+ clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0% 50%);
+}
+
+/* usamos a pseudo-classe hover que define como se comportara o elemento quando o mouse estiver em cima dele*/
+.buttonlink:hover {
+  font-weight: 600;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  background: #e8f7ff ;
+  color: #a3a3ff;
+  letter-spacing: 5px ;
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%, 0% 50%);
+}
+
+.logo {
+display: block;
+margin: 0 auto;
+width: 100%;
+max-width: 400px;
+height: 300px;
+border: 3px solid white;
+border-radius: 25px; /* define um arredondamento */
+overflow: hidden; /* corta oque vaza pra fora da caixa*/
+object-fit: cover;/* a imagem preenche a caixa intera sem a distorcer mas a amplia se necessário*/
+}
+
+.list {
+justify-content: center;
+align-items: center;
+text-align: left;
+margin: 35px auto;
+width: fit-content;
+font-size:30px;
+font-family: "TeX Gyre Adventor", sans-serif;
+}
+
+.list h2 {
+text-align: center;
+margin-bottom: 15px;
+color: #f0faff;
+}
+
+.list ul {
+list-style-type: disc;
+width: fit-content;
+padding-left: 20px;
+color: #f0faff;
+margin: 0 auto 30px auto;
+}
+
+.list li {
+margin-bottom: 10px;
+}
+
+.carousel {
+  position: relative;
+  max-width: 700px;
+  height: 450px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 1px solid white;
+  border-radius: 15px;
+  box-shadow: 0 0 12px rgba(255,255,255,0.2);
+}
+
+.slides {
+  /* garante que a subdivisao das imagens ocupe 100% do carrosel*/
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.0s ease-in-out;
+}
+
+.slides img {
+  /* garante que as imagens dentro da sub divisao slides fiquem ocupando 100% sem distorções exageradas e de maneira visível*/
+  width: 100%;
+  height: 100%;
+  object-fit: cover;/* feito para cobrir a área no todo*/
+  background-color: #000000;
+  flex-shrink: 0;
+}
+
+button {
+  /* aplicamos aos botões de avançar e retornar no carrosel */
+  position: absolute;
+  top: 50%;/* posiciona o elemento ao topo de seu respectivo pai*/
+  transform: translateY(-50%);/* move o elemento no eixo y */
+  width: 50px;
+  height: 50px;
+  border-radius: 100%; /* define um arredondamento */
+  border: 1px solid rgba(255,255,255,0.4);
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 20px;
+  cursor: pointer;/* a gente deixa assim pra mostra que é clicável*/
+  z-index: 10; /* z-index usamos pra dizer a ordem de empilhamento, um elemento com z-index maior ficara acima(sobrepondo) do menor */
+  transition: background-color 0.4s ease; /* faz uma transição utilizando a cor de fundo */
+  display: flex; /* vai definir como sera o comportamento do layout, é muito importante pra alinhar os elementos impedindo que eles entrem em colisão um com o outro*/
+  justify-content: center;
+  align-items: center;
+}
+/* hover é uma pseudo-classe que serve para apenas quando o mouse está em cima do elemento*/
+button:hover {
+  background-color: rgba(0,0,0,0.9);
+}
+
+/* chamamos as classes que criamos para aqueles botões*/
+.left { left: 10px; } /* afasta o elemento da esquerda */
+.right { right: 10px; } /* afasta o elemento da direita */
